@@ -8,13 +8,16 @@ Mock is created by saying:
 >   var mymock = test.mymock(objctToBeMocked);
 
 If 'true' is given as optional parameter, mocking is done recursively.
-an example use case might be:
 
-> // create mock
-> var mock = require("mok");
-> var mymock = mock.mock({foo: function () {}, bar: function () {}});
->
+An example use case might be:
+
+// create mock
+var mock = require("mok");
+var mymock = mock.mock({foo: function () {}, bar: function () {}});
+
+
 > // lay out the contract before executing tests
+
 > mymock.expect.foo().times(1).withParameters('hello').returns(true);
 > mymock.expect.bar().returns("retval");
 > mymock.expect.bar().returns("lavter");
