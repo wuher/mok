@@ -5,29 +5,28 @@ Simple object mocking for tests.
 
 Mock is created by saying:
 
->   var mymock = test.mymock(objctToBeMocked);
+    var mymock = test.mymock(objctToBeMocked);
 
 If 'true' is given as optional parameter, mocking is done recursively.
 
 An example use case might be:
 
-// create mock
-var mock = require("mok");
-var mymock = mock.mock({foo: function () {}, bar: function () {}});
+    // create mock
+    var mock = require("mok");
+    var mymock = mock.mock({foo: function () {}, bar: function () {}});
 
 
-> // lay out the contract before executing tests
+    // lay out the contract before executing tests
+    mymock.expect.foo().times(1).withParameters('hello').returns(true);
+    mymock.expect.bar().returns("retval");
+    mymock.expect.bar().returns("lavter");
 
-> mymock.expect.foo().times(1).withParameters('hello').returns(true);
-> mymock.expect.bar().returns("retval");
-> mymock.expect.bar().returns("lavter");
->
-> // execute tests
-> func_to_be_tested(foo, bar);
-> another_func_to_be_tested(bar);
->
-> // verify the contract
-> mock.releaseMocks();
+    // execute tests
+    func_to_be_tested(foo, bar);
+    another_func_to_be_tested(bar);
+
+    // verify the contract
+    mock.releaseMocks();
 
 The releaseMocks() function permorms the checks that all the right
 functions were called as many times as they were supposed to. Note that
