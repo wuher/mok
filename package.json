@@ -1,0 +1,7 @@
+{
+    "name": "mok",
+    "author": "Janne Kuuskeri",
+    "dependencies": [],
+    "description": "Simple mocking library",
+    "keywords": ["test", "mock"]
+}
