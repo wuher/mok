@@ -28,7 +28,7 @@ An example use case might be:
     // verify the contract
     mock.releaseMocks();
 
-The releaseMocks() function permorms the checks that all the right
+The releaseMocks() function performs the checks that all the right
 functions were called as many times as they were supposed to. Note that
 the number of times to be called may either be set explicitly using
 times() or the mock module may determine it by counting the
